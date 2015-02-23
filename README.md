@@ -4,16 +4,18 @@
 This plugin export the WP content in a XML file compactible with the iAHx format.
 
 ## How to use
-Activate the plugin and access http://<domain>/?feed=iahx to show the XML file.
+Activate the plugin and access `http://<domain>/?feed=iahx` to show the XML file.
+
 After this, you can use the following parameters and filters:
-`count`- Display content limit (default: -1 = ALL)
-`order`- Sort from lowest to highest (ASC) or from highest to lowest (DESC). (default: DESC)
-`status`- Filter by post status (default: publish)
-`post_type`- Filter by post type (default: any)
-`type`- Type tag value
-`db`- DB (database) tag value
-`la`- LA (language) tag value
-`ct`- Apply the custom template in the output format
+
+* `count`- Display content limit (default: -1 = ALL)
+* `order`- Sort from lowest to highest (ASC) or from highest to lowest (DESC). (default: DESC)
+* `status`- Filter by post status (default: publish)
+* `post_type`- Filter by post type (default: any)
+* `type`- Type tag value
+* `db`- DB (database) tag value
+* `la`- LA (language) tag value
+* `ct`- Apply the custom template in the output format
 
 __NOTE:__ To use __ct__ parameter correctly:
 * The __ct__ parameter value MUST BE equal to custom template file name
