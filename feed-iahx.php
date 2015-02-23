@@ -9,7 +9,7 @@ $args = array(
     'category'         => '',
     'category_name'    => '',
     'orderby'          => 'post_date',
-    'order'            => 'DESC',
+    'order'            => $_GET['order'] ? $_GET['order'] : 'DESC',
     'include'          => '',
     'exclude'          => '',
     'meta_key'         => '',
@@ -17,7 +17,7 @@ $args = array(
     'post_type'        => $_GET['post_type'] ? $_GET['post_type'] : 'any',
     'post_mime_type'   => '',
     'post_parent'      => '',
-    'post_status'      => 'publish',
+    'post_status'      => $_GET['status'] ? $_GET['status'] : 'publish',
     'suppress_filters' => true 
 );
 $posts = get_posts($args);
