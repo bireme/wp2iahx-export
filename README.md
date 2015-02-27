@@ -1,6 +1,6 @@
 # WP2iAHx Export
 
-## Summary
+## About
 This plugin exports the WP content in a XML file compatible with the iAHx format.
 
 ## How to use
