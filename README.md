@@ -9,6 +9,7 @@ Activate the plugin and access `http://<domain>/?feed=iahx` to show the XML file
 You can also use the following parameters and filters:
 
 * `count`- Display content limit (default: -1 = ALL)
+* `cat_name`- Filter by category name (default: empty string)
 * `order`- Sort from lowest to highest (ASC) or from highest to lowest (DESC). (default: DESC)
 * `status`- Filter by post status (default: publish)
 * `post_type`- Filter by post type (default: any)
