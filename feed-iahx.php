@@ -5,7 +5,7 @@
 
 $args = array(
     'posts_per_page'   => $_GET['count'] ? $_GET['count'] : -1,
-    'offset'           => 0,
+    'offset'           => $_GET['offset'] ? $_GET['offset'] : 0,
     'category'         => '',
     'category_name'    => $_GET['cat_name'] ? $_GET['cat_name'] : '',
     'orderby'          => 'post_date',
@@ -18,7 +18,7 @@ $args = array(
     'post_mime_type'   => '',
     'post_parent'      => '',
     'post_status'      => $_GET['status'] ? $_GET['status'] : 'publish',
-    'suppress_filters' => true 
+    'suppress_filters' => true
 );
 $posts = get_posts($args);
 
