@@ -14,16 +14,20 @@ You can also use the following parameters and filters:
 * `order`- Sort from lowest to highest (ASC) or from highest to lowest (DESC). (default: DESC)
 * `status`- Filter by post status (default: publish)
 * `post_type`- Filter by post type (default: any)
+* `tax` - Filter by taxonomy
+* `term` - Taxonomy term
+* `field` - Select taxonomy term by. Possible values are 'term_id', 'name' and 'slug' (default: 'slug')
 * `type`- Type tag value
 * `db`- DB (database) tag value
 * `la`- LA (language) tag value
 * `ct`- Apply the custom template in the output format
 
-__NOTE:__ To use __ct__ parameter correctly:
-* The __ct__ parameter value MUST BE equal to custom template file name
-* The custom template file MUST BE a PHP file
-
 ## Usage example
 ```
 http://<domain>/?feed=iahx&post_type=post&ct=custom_template&count=1
 ```
+
+## NOTES
+* To use __ct__ parameter correctly:
+** The __ct__ parameter value MUST BE equal to custom template file name
+** The custom template file MUST BE a PHP file
