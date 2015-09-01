@@ -16,7 +16,7 @@ You can also use the following parameters and filters:
 * `post_type`- Filter by post type (default: any)
 * `tax` - Filter by taxonomy
 * `term` - Taxonomy term
-* `field` - Select taxonomy term by. Possible values are 'term_id', 'name' and 'slug' (default: 'slug')
+* `field` - Select taxonomy term by. Possible values are __term_id__, __name__ and __slug__ (default: slug)
 * `type`- Type tag value
 * `db`- DB (database) tag value
 * `la`- LA (language) tag value
