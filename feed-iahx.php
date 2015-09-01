@@ -20,6 +20,17 @@ $args = array(
     'post_status'      => $_GET['status'] ? $_GET['status'] : 'publish',
     'suppress_filters' => true
 );
+
+if ( $_GET['tax'] && $_GET['term'] ) {
+    $args['tax_query'] = array(
+        array(
+            'taxonomy' => $_GET['tax'],
+            'field'    => $_GET['field'] ? $_GET['field'] : 'slug',
+            'terms'    => $_GET['term']
+        )
+    );
+}
+
 $posts = get_posts($args);
 
 header('Content-Type: ' . feed_content_type('rss-http') . '; charset=' . get_option('blog_charset'), true);
