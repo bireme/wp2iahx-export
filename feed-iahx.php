@@ -43,7 +43,7 @@ else {
 ?>
 <add>
     <language><?php bloginfo_rss( 'language' ); ?></language>
-    <?php foreach ( $posts as $post ) : setup_postdata( $post ); ?>
+    <?php foreach ( $posts as $post ) : setup_postdata( $post ); $meta = get_post_meta( $post->ID ); ?>
         <doc>
             <field name="id"><?php echo $post->post_type . '-' . $post->ID; ?></field>
             <field name="da"><?php echo mysql2date('Ymd', get_post_time('Y-m-d', true), true); ?></field>
@@ -54,8 +54,26 @@ else {
             <field name="ur"><?php the_permalink_rss(); ?></field>
             <field name="au"><?php $author = get_the_author(); ?><![CDATA[<?php author_format($author); ?>]]></field>
             <field name="la"><?php echo $_GET['la'] ? $_GET['la'] : ''; ?></field>
-            <?php rss_enclosure(); ?>
-            <?php do_action('rss2_item'); ?>
+            <?php
+                if (array_key_exists('wpdecs_terms', $meta)) {
+                    $wpdecs_terms = unserialize($meta['wpdecs_terms'][0]);
+                    foreach ( $wpdecs_terms as $decs ) :
+                        if ($decs['qid']) {
+                            foreach ( $decs['qid'] as $id ) :
+                                ?>
+                                <field name="mh"><![CDATA[<?php echo '^d' . $decs['mfn'] . '^s' . $id; ?>]]></field>
+                                <?php
+                            endforeach;
+                        } else {
+                            ?>
+                            <field name="mh"><![CDATA[<?php echo '^d' . $decs['mfn']; ?>]]></field>
+                            <?php
+                        }
+                    endforeach;
+                }
+                rss_enclosure();
+                do_action('rss2_item');
+            ?>
         </doc>
     <?php endforeach; ?>
     <?php wp_reset_postdata(); ?>
