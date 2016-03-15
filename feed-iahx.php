@@ -54,6 +54,12 @@ else {
             <field name="ur"><?php the_permalink_rss(); ?></field>
             <field name="au"><?php $author = get_the_author(); ?><![CDATA[<?php author_format($author); ?>]]></field>
             <field name="la"><?php echo $_GET['la'] ? $_GET['la'] : ''; ?></field>
+            <?php foreach ( $meta as $key => $value ) : ?>
+                <?php if ( $key != 'wpdecs_terms' ) { ?>
+                    <?php $name = str_replace('-', '_', $key); ?>
+                    <field name="<?php echo $name; ?>"><![CDATA[<?php echo $value[0]; ?>]]></field>
+                <?php } ?>
+            <?php endforeach; ?>
             <?php
                 if (array_key_exists('wpdecs_terms', $meta)) {
                     $wpdecs_terms = unserialize($meta['wpdecs_terms'][0]);
@@ -71,6 +77,15 @@ else {
                         }
                     endforeach;
                 }
+            ?>
+            <?php $cat = get_taxonomies(); $tax = wp_get_post_terms( $post->ID, $cat ); ?>
+            <?php if ($tax) { ?>
+                <?php foreach ( $tax as $t ) : ?>
+                    <?php $name = str_replace('-', '_', $t->taxonomy); ?>
+                    <field name="<?php echo $name; ?>"><![CDATA[<?php echo $t->name; ?>]]></field>
+                <?php endforeach; ?>
+            <?php } ?>
+            <?php
                 rss_enclosure();
                 do_action('rss2_item');
             ?>
