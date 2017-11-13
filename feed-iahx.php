@@ -4,7 +4,7 @@
  */
 
 $args = array(
-    'posts_per_page'   => $_GET['count'] ? $_GET['count'] : -1,
+    'posts_per_page'   => $_GET['count'] ? $_GET['count'] : 10,
     'offset'           => $_GET['offset'] ? $_GET['offset'] : 0,
     'category'         => '',
     'category_name'    => $_GET['cat_name'] ? $_GET['cat_name'] : '',
