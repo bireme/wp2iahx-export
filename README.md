@@ -8,7 +8,7 @@ Activate the plugin and access `http://<domain>/?feed=iahx` to show the XML file
 
 You can also use the following parameters and filters:
 
-* `count`- Display content limit (default: -1 = ALL)
+* `count`- Display content limit (default: 10)
 * `offset`- Display offset number (default: 0)
 * `cat_name`- Filter by category name (default: empty string)
 * `order`- Sort from lowest to highest (ASC) or from highest to lowest (DESC). (default: DESC)
