@@ -67,12 +67,12 @@ else {
                         if ($decs['qid']) {
                             foreach ( $decs['qid'] as $id ) :
                                 ?>
-                                <field name="mh"><?php echo '^d' . $decs['mfn'] . '^s' . $id; ?></field>
+                                <field name="mh"><![CDATA[<?php echo '^d' . $decs['mfn'] . '^s' . $id; ?>]]></field>
                                 <?php
                             endforeach;
                         } else {
                             ?>
-                            <field name="mh"><?php echo '^d' . $decs['mfn']; ?></field>
+                            <field name="mh"><![CDATA[<?php echo '^d' . $decs['mfn']; ?>]]></field>
                             <?php
                         }
                     endforeach;
