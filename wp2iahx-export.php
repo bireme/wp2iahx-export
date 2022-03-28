@@ -3,7 +3,8 @@
 Plugin Name: WP2iAHx Export
 Plugin URI: https://github.com/bireme/wp2iahx-export
 Description: This plugin generates a XML file in iAHx format for multiple posts from your Wordpress blog.
-Author: Wilson Moura
+Author: Wilson Moura - BIREME/PAHO/WHO
+Author URI: http://github.com/wilsonmoura
 Version: 1.0
 */
 
